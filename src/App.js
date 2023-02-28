@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { Container, Spacer, Stack } from '@chakra-ui/react';
+import AppBarHeader from './Components/AppBars/AppBarHeader';
+import MainRoute from './Routes/MainRoute';
+import AppBarFooter from './Components/AppBars/AppBarFooter';
+// import { UserAuthContextProvider } from './Hook/UserAuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   {/* <UserAuthContextProvider> */}
+   <Container p='0' shadow="2xl" width="md">
+    <Stack height="100vh">
+      <AppBarHeader />
+      <MainRoute />
+      <Spacer />
+      <AppBarFooter />
+    </Stack>
+   </Container>
+   {/* </UserAuthContextProvider> */}
+   </>
   );
 }
 

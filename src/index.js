@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ChakraProvider, extendTheme } from '@chakra-ui/react'
+import AuthProvider from './Hook/AuthProvider';
+
+const colors = {
+  brand: {
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#d7f5f0",
+    100: "#FFA1CF",
+  },
+};
+
+const theme = extendTheme({ colors });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <AuthProvider>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
