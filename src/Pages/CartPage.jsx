@@ -76,25 +76,23 @@ const CartPage = () => {
     cartData = { ...data };
 
     try {
-      const ref = doc(db, "cart", currentUser.uid);
-      await setDoc(
-        ref,
-        {
-          uid: currentUser.uid,
-          data: arrayRemove(cartData),
-          createdAt: new Date(),
-        },
-        { merge: true }
-      );
-
-      cartData = {};
-      // loadingClose();
-
-      toast({
-        title: "Beautyology",
-        description: "Berhasil menghapus product ke cart.",
-        status: "success",
-      });
+      // const ref = doc(db, "cart", currentUser.uid);
+      // await setDoc(
+      //   ref,
+      //   {
+      //     uid: currentUser.uid,
+      //     data: arrayRemove(cartData),
+      //     createdAt: new Date(),
+      //   },
+      //   { merge: true }
+      // );
+      // cartData = {};
+      // // loadingClose();
+      // toast({
+      //   title: "Beautyology",
+      //   description: "Berhasil menghapus product ke cart.",
+      //   status: "success",
+      // });
     } catch (error) {
       // loadingClose();
       toast({

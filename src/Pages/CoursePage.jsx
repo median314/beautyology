@@ -44,7 +44,14 @@ const CoursesPage = () => {
   }, []);
 
   return (
-    <Box overflow={"auto"}>
+    <Box
+      overflow={"auto"}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "0",
+        },
+      }}
+    >
       <Box>
         <Image src="https://neilpatel.com/wp-content/uploads/fly-images/99366/skincare-marketing-1200x675-c.jpg" />
       </Box>
@@ -59,14 +66,23 @@ const CoursesPage = () => {
                   <Box borderRadius={5} overflow={"hidden"} boxShadow={"md"}>
                     <Image src={course.image} />
                     <Stack justifyContent={"center"}>
-                      <Text
-                        justifyContent={"center"}
-                        align={"center"}
-                        fontSize={15}
-                        fontWeight={"bold"}
-                      >
-                        {course.name}
-                      </Text>
+                      <Stack>
+                        <Text
+                          fontSize={14}
+                          align={"center"}
+                          fontWeight={"bold"}
+                          mt={2}
+                        >
+                          MASTERCLASS - BASIC
+                        </Text>
+                        <Text
+                          align={"center"}
+                          fontSize={15}
+                          fontWeight={"bold"}
+                        >
+                          {course.name}
+                        </Text>
+                      </Stack>
                       <HStack justifyContent={"center"}>
                         <Text
                           w={50}

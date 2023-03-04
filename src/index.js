@@ -9,10 +9,10 @@ import AuthProvider from './Hook/AuthProvider';
 
 const colors = {
   brand: {
-    900: "#1a365d",
+    900: "#a18dca",
     800: "#153e75",
     700: "#d7f5f0",
-    100: "#FFA1CF",
+    100: "#D2DAFF",
   },
 };
 

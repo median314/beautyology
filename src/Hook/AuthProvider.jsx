@@ -107,25 +107,29 @@ export const AuthProvider = ({ children }) => {
 
   //cart
   const getDataCart = () => {
-    try {
-      onSnapshot(doc(db, "cart", currentUser.uid), (doc) => {
-        // console.log(doc.data(), "ini data cart");
-        setCartList(doc.data());
-      });
-    } catch (error) {
-      console.log(error, "ini error");
+    if (currentUser) {
+      try {
+        onSnapshot(doc(db, "cart", currentUser.uid), (doc) => {
+          // console.log(doc.data(), "ini data cart");
+          setCartList(doc.data());
+        });
+      } catch (error) {
+        console.log(error, "ini error");
+      }
     }
   };
 
   //wishlist
   const getDataWishlist = () => {
-    try {
-      onSnapshot(doc(db, "wishlist", currentUser.uid), (doc) => {
-        // console.log(doc.data(), "ini data wishlist");
-        setProductWishlist(doc.data());
-      });
-    } catch (error) {
-      console.log(error, "ini error");
+    if (currentUser) {
+      try {
+        onSnapshot(doc(db, "wishlist", currentUser.uid), (doc) => {
+          // console.log(doc.data(), "ini data wishlist");
+          setProductWishlist(doc.data());
+        });
+      } catch (error) {
+        console.log(error, "ini error");
+      }
     }
   };
 

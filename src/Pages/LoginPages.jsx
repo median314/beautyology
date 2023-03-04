@@ -11,10 +11,10 @@ import {
   Toast,
   useToast,
 } from "@chakra-ui/react";
-import Logo from "../Assets/Beautyology.png";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../Hook/AuthContext";
+import Logo from "../Assets/LogoBeautyology.png";
 
 const LoginPages = () => {
   const [email, setEmail] = useState("");
@@ -26,11 +26,6 @@ const LoginPages = () => {
   const handleLogin = async () => {
     if (email !== "" && password !== "") {
       login(email, password);
-      toast({
-        title: "Beautyology",
-        description: "Login Success",
-        status: "success",
-      });
     } else {
       toast({
         title: "Beautyology",

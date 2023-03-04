@@ -13,9 +13,11 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import React, { useContext } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth, db } from "../config/firebase";
-import Logo from "../Assets/Beautyology.png";
 import AuthContext from "../Hook/AuthContext";
+import Logo from "../Assets/LogoBeautyology.png";
+
 // import { useUserAuth } from "../Hook/UserAuthContext";
 
 const SignUpPage = () => {
@@ -29,6 +31,7 @@ const SignUpPage = () => {
   );
   const { signUp } = useContext(AuthContext);
   const toast = useToast();
+  const navigate = useNavigate();
 
   const registerData = async () => {
     const displayName = name;
@@ -76,6 +79,7 @@ const SignUpPage = () => {
               subscription: "null",
               createdAt: new Date(),
             });
+            navigate("/");
           })
 
           .catch((error) => {
@@ -142,8 +146,8 @@ const SignUpPage = () => {
   return (
     <>
       <Stack justifyContent={"center"} px={20} pt={10}>
-        <Box>
-          <Image w={"15em"} src={Logo} />
+        <Box align={"center"}>
+          <Image align={"center"} w={"15em"} src={Logo} />
         </Box>
         <Spacer />
         <FormControl>

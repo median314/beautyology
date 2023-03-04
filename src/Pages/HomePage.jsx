@@ -56,17 +56,25 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Box overflowY={"auto"}>
+    <Box
+      overflowY={"auto"}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "0",
+        },
+      }}
+    >
       <AppCarousel images={carousel} />
       <Stack px={4}>
         <Heading size="md" mt={8} align={"center"}>
           Welcome to Beautyology!
         </Heading>
         <Text fontSize={13} align={"center"}>
-          In this website, you will Dolore id laboris aliqua sint irure. Irure
-          tempor eu cillum tempor consequat cillum amet fugiat ipsum qui et
-          minim eu. Minim est sit nisi pariatur excepteur magna incididunt non
-          laboris exercitation ea reprehenderit fugiat.
+          Membantu entrepreneur dan professional untuk membangun klinik
+          kecantikan yang sukses dengan belajar lewat video dan buku tentang
+          langkah-langkah untuk terjun didunia bisnis kecantikan, dengan
+          pemateri yang sudah berpengalaman. Jadilah bagian dari pebisnis yang
+          sukses dalam klinik kecantikan, daftar kursus video dan beli bukunya
         </Text>
       </Stack>
       {/* <Text
@@ -128,15 +136,26 @@ const HomePage = () => {
           courses?.map((x, i) => (
             <Link key={i} to={`/course/${x.id}`}>
               <Box boxShadow={"md"} borderRadius={"md"} overflow={"hidden"}>
-                <Image w={"10em"} src={x.image} align={"center"} />
-                <Text px={2} fontSize={12} fontWeight={"bold"}>
+                <Image src={x.image} align={"center"} />
+                <Text
+                  px={2}
+                  py={3}
+                  fontSize={"sm"}
+                  align={"center"}
+                  fontWeight={"bold"}
+                >
                   {x.name}
                 </Text>
                 <Badge color={"white"} bg={"red"} fontSize={8}>
                   {x.category.first}
                 </Badge>
                 <Box p={2}>
-                  <Button size={"xs"} w={"full"}>
+                  <Button
+                    size={"sm"}
+                    w={"full"}
+                    bg={"brand.900"}
+                    color={"white"}
+                  >
                     Beli
                   </Button>
                 </Box>

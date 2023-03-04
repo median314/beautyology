@@ -17,7 +17,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../Hook/AuthContext";
 import store from "store";
 import { IoCartOutline } from "react-icons/io5";
-import Logo from "../../Assets/Beautyology.png";
+import Logo from "../../Assets/LogoBeautyology.png";
 import {
   MdFavorite,
   MdOutlineFavorite,
@@ -42,9 +42,9 @@ const AppBarHeader = () => {
   };
 
   return (
-    <>
+    <Box boxShadow={"md"}>
       <HStack
-        bg={"brand.100"}
+        bg={"white"}
         color={"#03001C"}
         justifyContent={"space-between"}
         p={"5"}
@@ -94,7 +94,7 @@ const AppBarHeader = () => {
               <Button
                 colorScheme={"yellow"}
                 variant={"outline"}
-                size={"sm"}
+                size={"xs"}
                 onClick={onOpen}
               >
                 Logout
@@ -131,7 +131,7 @@ const AppBarHeader = () => {
           </ModalContent>
         </Modal>
       </HStack>
-    </>
+    </Box>
   );
 };
 

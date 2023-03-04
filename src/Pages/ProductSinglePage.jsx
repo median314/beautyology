@@ -133,7 +133,14 @@ const ProductSinglePage = () => {
   }, []);
 
   return (
-    <Box overflow={"auto"}>
+    <Box
+      overflow={"auto"}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "0",
+        },
+      }}
+    >
       <HStack pos={"relative"} p={4} justifyContent={"space-between"}>
         <Link to={"/product"}>
           <Box>
@@ -141,11 +148,10 @@ const ProductSinglePage = () => {
           </Box>
         </Link>
       </HStack>
-      {/* <AppCarousel images={carousel} /> */}
+
       {product ? (
         <Box>
           <Image src={product.image} align={"center"} />
-          {/* <Text>{product.name}</Text> */}
           <Box px={5} mt={3}>
             <HStack justifyContent={"space-between"}>
               <Text fontWeight={"bold"} fontSize={18}>
@@ -154,13 +160,6 @@ const ProductSinglePage = () => {
                   maximumSignificantDigits: 3,
                 }).format(product.price)}
               </Text>
-              <Box>
-                <GrFavorite
-                  cursor={"pointer"}
-                  size={"1.4em"}
-                  onClick={() => handleWishlist()}
-                />
-              </Box>
             </HStack>
             <HStack spacing={2} pt={1}>
               <HStack spacing={"none"}>
@@ -182,9 +181,6 @@ const ProductSinglePage = () => {
           </Box>
           <Box p={4}>
             <Heading size={"sm"}>Deskripsi Produk</Heading>
-            <Text py={2} fontSize={14}>
-              exp date: Jan 2024
-            </Text>
             <Text fontSize={14}>
               {" "}
               Helps you to achieve a maximum level of crystal bright skin,

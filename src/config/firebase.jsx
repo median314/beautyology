@@ -9,13 +9,13 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyApA1MkYt2UTqkRc66Bp60Y6VVf33tcCy0",
-  authDomain: "beautyology-web-admin.firebaseapp.com",
-  projectId: "beautyology-web-admin",
-  storageBucket: "beautyology-web-admin.appspot.com",
-  messagingSenderId: "647544041513",
-  appId: "1:647544041513:web:b8cee3bba8d430ca9e6c38",
-  measurementId: "G-BK6Y9VTY61",
+  apiKey: "AIzaSyDszU0RNYyRiYFxvVElFugqZrTtEi5R_U8",
+  authDomain: "beautyology-id.firebaseapp.com",
+  projectId: "beautyology-id",
+  storageBucket: "beautyology-id.appspot.com",
+  messagingSenderId: "1096625501074",
+  appId: "1:1096625501074:web:1d9f38fef534faeb88074b",
+  measurementId: "G-2B7W7P32F3",
 };
 
 // Initialize Firebase
@@ -35,15 +35,6 @@ export { analytics, storage, db, auth };
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDszU0RNYyRiYFxvVElFugqZrTtEi5R_U8",
-//   authDomain: "beautyology-id.firebaseapp.com",
-//   projectId: "beautyology-id",
-//   storageBucket: "beautyology-id.appspot.com",
-//   messagingSenderId: "1096625501074",
-//   appId: "1:1096625501074:web:1d9f38fef534faeb88074b",
-//   measurementId: "G-2B7W7P32F3"
-// };
 
 // Initialize Firebase
 // const app = initializeApp(firebaseConfig);

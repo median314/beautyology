@@ -68,66 +68,15 @@ const BestProductPage = () => {
   }, []);
 
   return (
-    <Box overflow={"auto"}>
+    <Box
+      overflow={"auto"}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "0",
+        },
+      }}
+    >
       <Box p={2} align={"center"}>
-        <Box spacing={2}>
-          {bundles?.length > 0
-            ? bundles.map((bundle, i) => (
-                <Link key={i} to={`/product/bundle/${bundle.id}`}>
-                  <Box
-                    boxShadow={"md"}
-                    borderRadius={"md"}
-                    overflow={"hidden"}
-                    p={3}
-                    w={"80%"}
-                  >
-                    <Image w={"20em"} src={bundle.image} mb={2} />
-                    <HStack justifyContent={"space-between"}>
-                      <Text fontSize={16} fontWeight={"bold"}>
-                        {bundle.name}
-                      </Text>
-                      <HStack>
-                        <Badge
-                          bg={"red"}
-                          color={"white"}
-                          fontSize={9}
-                          borderRadius={3}
-                          p={0.5}
-                        >
-                          {bundle.category.first}
-                        </Badge>
-                        <Badge
-                          bg={"red"}
-                          color={"white"}
-                          fontSize={9}
-                          borderRadius={3}
-                          p={0.5}
-                        >
-                          {bundle.category.second}
-                        </Badge>
-                      </HStack>
-                    </HStack>
-                    <Text fontSize={13} py={3}>
-                      {bundle.description}
-                    </Text>
-                    <Box align={"center"}>
-                      <Button
-                        bg={"brand.100"}
-                        w={"20em"}
-                        color="white"
-                        size={"sm"}
-                        mt={1}
-                      >
-                        Details
-                      </Button>
-                    </Box>
-                  </Box>
-                </Link>
-              ))
-            : null}
-        </Box>
-        <Divider mt={5} />
-
         <Stack spacing={3}>
           {products?.length > 0
             ? products.map((product, i) => (
@@ -138,7 +87,7 @@ const BestProductPage = () => {
                     overflow={"hidden"}
                     p={3}
                   >
-                    <Image w={"20em"} src={product.image} mb={2} />
+                    <Image src={product.image} mb={2} />
                     <Stack justifyContent={"space-between"}>
                       <Text fontSize={14} fontWeight={"bold"}>
                         {product.name}
@@ -172,11 +121,12 @@ const BestProductPage = () => {
                     </Stack>
                     <Box align={"center"}>
                       <Button
-                        bg={"brand.100"}
+                        bg={"brand.900"}
                         color="white"
-                        size={"xs"}
-                        w={"10em"}
+                        size={"sm"}
+                        w={"80%"}
                         mt={1}
+                        borderRadius={"sm"}
                       >
                         Details
                       </Button>
